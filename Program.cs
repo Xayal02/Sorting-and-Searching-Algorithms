@@ -7,12 +7,6 @@ namespace Algorithms
         static void Main(string[] args)
         {
             //practise any algorithm here
-
-            int[] nums = { 63, 5, 2, 4, 6, 7, 9, 2, 3, 5 };
-
-            BucketSort.BucketSortAlgorithm(nums);
-
-            PrintArray(nums);
         }
         private static void PrintArray(int[] arr)
         {
@@ -21,9 +15,6 @@ namespace Algorithms
                 Console.Write(arr[i] + " ");
             Console.WriteLine();
         }
-
-       
-        
     }
 }
 
