@@ -9,8 +9,13 @@ namespace Algorithms
     public class Program
     {
         static void Main(string[] args)
+<<<<<<< HEAD
         {
           //You can test algorithms here
+=======
+        {
+            //practise any algorithm here
+>>>>>>> 9d5a8730434d7aec11f14b6b13fa49f2de4129a8
         }
         private static void PrintArray(int[] arr)
         {
@@ -19,6 +24,7 @@ namespace Algorithms
                 Console.Write(arr[i] + " ");
             Console.WriteLine();
         }
+<<<<<<< HEAD
 
         //This method is used throughout the project
         public static void Swap(int[] arr, int i, int j)
@@ -36,6 +42,8 @@ namespace Algorithms
         public int Id { get; set; }
         public string Name { get; set; }
 
+=======
+>>>>>>> 9d5a8730434d7aec11f14b6b13fa49f2de4129a8
     }
 }
 
