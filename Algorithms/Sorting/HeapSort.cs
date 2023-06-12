@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             for (int i = arr.Length - 1; i > 0; i--)
             {
                 // Swap the root (maximum value) with the last unsorted element
-                Swap(arr, 0, i);
+                Program.Swap(arr, 0, i);
 
                 // Maintain the max heap property on the reduced heap
                 Heapify(arr, i, 0);
@@ -54,16 +55,9 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             // If the largest element is not the root, swap them and recursively heapify the affected subtree
             if (largest != root)
             {
-                Swap(arr, root, largest);
+                Program.Swap(arr, root, largest);
                 Heapify(arr, n, largest);
             }
-        }
-
-        private static void Swap(int[] arr, int i, int j)
-        {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Algorithms;
+using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
 {
-    internal class SelectionSort
+    internal partial class SelectionSort
     {
         public static void SelectionSortAlgorithm(int[] arr)
         {
+            if(arr is null) return;
+
             int n = arr.Length;
 
             for (int i = 0; i < n - 1; i++)
@@ -25,9 +29,8 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
                 }
 
                 // Swap the found minimum element with the first element
-                int temp = arr[minIndex];
-                arr[minIndex] = arr[i];
-                arr[i] = temp;
+
+                Program.Swap(arr, minIndex, i);
             }
         }
     }

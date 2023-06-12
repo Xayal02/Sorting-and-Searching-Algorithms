@@ -10,8 +10,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
     {
         public static void InsertionSortAlgorithm(int[] arr)
         {
-            if (arr == null || arr.Length <= 1)
-                return;
+            if (arr is null || arr.Length <= 1)  return;
 
             for (int i = 1; i < arr.Length; i++)
             {
@@ -27,6 +26,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
                 arr[j + 1] = key;
             }
         }
+    
 
     }
 }

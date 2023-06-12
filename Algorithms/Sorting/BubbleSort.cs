@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,8 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
                 {
                     if (arr[j] > arr[j + 1])
                     {
-                        // Swap arr[j] and arr[j+1]
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+                        // Swap arr[j] and arr[j+1
+                        Program.Swap(arr, i, j);
                     }
                 }
             }

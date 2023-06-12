@@ -16,11 +16,11 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             int n = arr.Length;
             int mid = n / 2;
 
-            // Create two temporary arrays
+            // Create two  subArrays
             int[] left = new int[mid];
             int[] right = new int[n - mid];
 
-            // Copy elements to the temporary arrays
+            // Copy elements to the subArrays
             Array.Copy(arr, 0, left, 0, mid);
             Array.Copy(arr, mid, right, 0, n - mid);
 
@@ -73,4 +73,5 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             }
         }
     }
+   
 }

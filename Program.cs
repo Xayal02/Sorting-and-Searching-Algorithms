@@ -1,18 +1,16 @@
 ﻿using Sorting_and_Searching_Algorithms.Algorithms.Sorting;
 using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using static Sorting_and_Searching_Algorithms.Algorithms.Sorting.SelectionSort;
+
 namespace Algorithms
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            //practise any algorithm here
-
-            int[] nums = { 63, 5, 2, 4, 6, 7, 9, 2, 3, 5 };
-
-            BucketSort.BucketSortAlgorithm(nums);
-
-            PrintArray(nums);
+          //You can test algorithms here
         }
         private static void PrintArray(int[] arr)
         {
@@ -22,8 +20,22 @@ namespace Algorithms
             Console.WriteLine();
         }
 
-       
-        
+        //This method is used throughout the project
+        public static void Swap(int[] arr, int i, int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+
+    }
+
+    public class User
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
     }
 }
 

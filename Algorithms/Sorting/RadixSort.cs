@@ -13,7 +13,6 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             if (arr == null || arr.Length <= 1)
                 return;
 
-            int n = arr.Length;
             int max = GetMaxValue(arr);
 
             // Perform counting sort for each digit position
@@ -25,6 +24,8 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
 
         private static int GetMaxValue(int[] arr)
         {
+
+            
             int max = arr[0];
             for (int i = 1; i < arr.Length; i++)
             {
@@ -36,12 +37,12 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
 
         private static void CountingSort(int[] arr, int exp)
         {
-            int n = arr.Length;
-            int[] output = new int[n];
+            int initialArrayLength = arr.Length;
+            int[] output = new int[arr.Length];
             int[] count = new int[10]; // 10 is the number of possible digits (0-9)
 
             // Store the count of each digit in the count array
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < initialArrayLength; i++)
             {
                 int digit = arr[i] / exp % 10;
                 count[digit]++;
@@ -54,7 +55,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             }
 
             // Build the output array by placing each element in its correct position
-            for (int i = n - 1; i >= 0; i--)
+            for (int i = initialArrayLength - 1; i >= 0; i--)
             {
                 int digit = arr[i] / exp % 10;
                 output[count[digit] - 1] = arr[i];
@@ -62,7 +63,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             }
 
             // Copy the sorted elements from the output array to the original array
-            Array.Copy(output, arr, n);
+            Array.Copy(output, arr, initialArrayLength);
         }
     }
 }

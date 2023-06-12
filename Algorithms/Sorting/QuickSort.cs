@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
         }
 
         private static void QuickSortAlgorithm(int[] arr, int low, int high)
-        {
+         {
             if (low < high)
             {
                 int pivotIndex = Partition(arr, low, high);
@@ -33,19 +34,14 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
                 if (arr[j] <= pivot)
                 {
                     i++;
-                    Swap(arr, i, j);
+                    Program.Swap(arr, i, j);
                 }
             }
 
-            Swap(arr, i + 1, high);
+            Program.Swap(arr, i + 1, high);
             return i + 1;
         }
 
-        private static void Swap(int[] arr, int i, int j)
-        {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
+
     }
 }

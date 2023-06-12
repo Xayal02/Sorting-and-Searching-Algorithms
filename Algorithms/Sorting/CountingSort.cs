@@ -13,7 +13,7 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             if (arr == null || arr.Length <= 1)
                 return;
 
-            int n = arr.Length;
+            int initialArrayLength = arr.Length;
 
             // Find the maximum element in the array
             int max = ArrayMaxElementDeterminer(arr);
@@ -22,29 +22,29 @@ namespace Sorting_and_Searching_Algorithms.Algorithms.Sorting
             int[] count = new int[max + 1];
 
             // Store the count of each element in the count array
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < initialArrayLength; i++)
             {
                 count[arr[i]]++;
             }
 
-            // Modify the count array to store the actual position of each element
+            // Modify the count array to store cumulative sum of the elements
             for (int i = 1; i <= max; i++)
             {
                 count[i] += count[i - 1];
             }
 
             // Create a temporary output array
-            int[] output = new int[n];
+            int[] output = new int[initialArrayLength];
 
             // Build the output array by placing each element in its correct position
-            for (int i = n - 1; i >= 0; i--)
+            for (int i =initialArrayLength - 1; i >= 0; i--)
             {
                 output[count[arr[i]] - 1] = arr[i];
                 count[arr[i]]--;
             }
 
             // Copy the sorted elements from the output array to the original array
-            Array.Copy(output, arr, n);
+            Array.Copy(output, arr, arr.Length);
         }
         private static int ArrayMaxElementDeterminer(int[] arr)
         {
